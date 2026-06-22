@@ -1,32 +1,17 @@
 #include "engine/engine.h"
+
 #include "callback.h"
+#include "engine/init.h"
 
 // Constructor
 Engine::Engine()
 {
-    if (!glfwInit())
-    {
-        std::cout << "Failed to initialize GLFW" << std::endl;
-    }
+    initGLFW();
+    setRenderSettings();
+    this->window = createWindow(800, 800, "Engine");
+    initGLAD();
 
-    glfwWindowHint(GLFW_SAMPLES, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    this->window = glfwCreateWindow(900, 900, "Engine", NULL, NULL);
-    if (this->window == NULL)
-    {
-        std::cout << "Failed to open GLFW window" << std::endl;
-    }
-    glfwMakeContextCurrent(this->window);
-
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-    }
-
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 800, 800);
     glfwSetFramebufferSizeCallback(this->window, framebufferSizeCallback);
 }
 
