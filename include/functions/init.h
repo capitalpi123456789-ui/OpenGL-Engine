@@ -1,4 +1,7 @@
-#include "engine/engine.h"
+#pragma once
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 void initGLFW();
 void setRenderSettings();

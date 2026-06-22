@@ -1,4 +1,5 @@
-#include "engine/init.h"
+#include <stdexcept>
+#include "functions/init.h"
 
 void initGLFW()
 {

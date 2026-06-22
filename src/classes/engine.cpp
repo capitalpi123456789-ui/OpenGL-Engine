@@ -1,7 +1,7 @@
-#include "engine/engine.h"
+#include "classes/engine.h"
 
-#include "callback.h"
-#include "engine/init.h"
+#include "functions/callback.h"
+#include "functions/init.h"
 
 // Constructor
 Engine::Engine()
