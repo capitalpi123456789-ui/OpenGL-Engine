@@ -6,12 +6,12 @@ class VBO
 {
     public:
 
-        GLuint ID;
+    GLuint ID;
 
-        VBO();
-        ~VBO();
+    VBO();
+    ~VBO();
 
-        void bind();
-        void unbind();
+    void bind();
+    void unbind();
 
 };
