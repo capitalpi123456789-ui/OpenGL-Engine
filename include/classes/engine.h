@@ -7,21 +7,26 @@
 #include <string_view>
 
 /*
-* Container class for entire engine
+* Container class for engine
 */
 
 class Engine
 {
     public:
 
-    // Constructor / Destructor
+    //@brief Initializes game engine and handles window creation
     Engine();
+
+    // @brief Automatically unallocates resources
     ~Engine();
 
-    // Updating functions
+    // @brief Handles updating and event pulling
     void update();
+
+    // @brief Renders goodies to window
     void render();
 
+    // @brief Pointer to GLFWwindow
     GLFWwindow* window;
 
     private:
