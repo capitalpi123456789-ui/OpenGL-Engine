@@ -3,6 +3,7 @@
 VBO::VBO()
 {
     glGenBuffers(1, &(this->ID));
+    glBindBuffer(GL_ARRAY_BUFFER, this->ID);
 }
 
 VBO::~VBO()
